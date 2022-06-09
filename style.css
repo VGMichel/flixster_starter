@@ -1,1 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@200;300;400&display=swap');
 
+:root {
+    --font-primary: Montserrat sans-serif;
+    --font-secondary: Poppins sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+
+
+.hidden {
+    display: none;
+}
