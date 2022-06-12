@@ -4,15 +4,19 @@ const searchMoviesGrid = document.querySelector('#movies-grid-search')
 const movieCard = document.querySelector('.movie-card')
 const loadBtn = document.querySelector('#load-more-movies-btn')
 const loadSearchBtn = document.querySelector('#load-more-movies-btn-search')
-const movieSearchBtn = document.querySelector('#submit')
+const searchBtn = document.querySelector('#submit')
+const clearSearchBtn = document.querySelector('#clear')
 const sectionNowPlaying = document.querySelector('.now-playing')
 const sectionSearch = document.querySelector('.search-movies')
+const imgHTTP = 'https://www.themoviedb.org/t/p/w1280/';
 
+let searchInput = document.querySelector('#search-input').value
 let page = 1;
 let emptySearch = ''
 
-/////// NOW PLAYING ///////
-async function loadNowPlaying (evt) {
+
+/////// MOVIES NOW PLAYING ///////
+async function loadNowPlaying () {
 
     let apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&page=${page}`
 
@@ -25,7 +29,7 @@ async function loadNowPlaying (evt) {
 }
 
 function loadMoreNowPlaying () {
-    let searchInput = document.querySelector('#search').value
+    let searchInput = document.querySelector('#search-input').value
 
     if (searchInput == emptySearch){
         page++
@@ -34,7 +38,6 @@ function loadMoreNowPlaying () {
 }
 
 function displayMovies (movieData) {
-    const imgHTTP = 'https://www.themoviedb.org/t/p/w1280/';
 
     movieData.results.forEach(function(i) {
         //console.log(i.title)
@@ -49,18 +52,22 @@ function displayMovies (movieData) {
         `
     })
 }
-/////// END NOW PLAYING ///////
+
+    loadBtn.addEventListener('click', () => {
+        loadMoreNowPlaying()
+    })
+/////// END MOVIES NOW PLAYING ///////
 
 
-/////// SEARCH RESULTS ///////
 
-movieSearchBtn.addEventListener("click", searchMovies)
-async function searchMovies(evt) {
+/////// MOVIE SEARCH RESULTS ///////
+
+async function searchMovies() {
 
     nowPlayingGrid.innerHTML = ``
-    evt.preventDefault();
-    let searchInput = document.querySelector('#search').value
-    let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchInput}&page=${page}`
+    let searchInput = document.querySelector('#search-input').value
+    let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&page=${page}&query=${searchInput}`
+
     const searchResponse = await fetch(searchUrl)
     const searchResponseData = await searchResponse.json()
 
@@ -70,22 +77,7 @@ async function searchMovies(evt) {
     displaySearch(searchResponseData)
 }
 
-function loadMoreSearch () {
-    let searchInput = document.querySelector('#search').value
-    
-    if (searchInput != emptySearch){
-        page++
-        searchMovies()
-    }
-}
-
-/*loadSearchBtn.addEventListener('click', () => {
-    //console.log('Don\'t touch me')
-
-})*/
-
 function displaySearch (searchMovieData) {
-    const imgHTTP = 'https://www.themoviedb.org/t/p/w1280/';
 
     searchMovieData.results.forEach(function(x) {
         searchMoviesGrid.innerHTML += `
@@ -98,19 +90,34 @@ function displaySearch (searchMovieData) {
         </div>
         `
     })
+
 }
 
+function clearSearch() {
+    page = 1
+    searchMoviesGrid.innerHTML = ``
+}
+
+loadSearchBtn.addEventListener("click", (evt) => {
+    evt.preventDefault()
+    page++
+    searchMovies()
+})
+
+searchBtn.addEventListener("click", (evt) => {
+    evt.preventDefault()
+    sectionSearch.classList.remove('hidden')
+    sectionNowPlaying.classList.add('hidden')
+    clearSearch()
+    searchMovies()
+})
+/////// END MOVIE SEARCH RESULTS ///////
+
+
+
+/////// WINDOW ONLOAD ///////
 window.onload = function () {
 
     loadNowPlaying(nowPlayingGrid)
 
-    loadBtn.addEventListener('click', () => {
-        //console.log("I\'m being attacked")
-        loadMoreNowPlaying()
-    })
-
-    loadBtn.addEventListener("click", (evt) => {
-        evt.preventDefault()
-        loadMoreSearch()
-    })
 }

@@ -15,11 +15,12 @@
 
     <h1 class="header-1 title">Flixster</h1>
     <form id="movie-search">
-        <label for="search">Search:</label>
-        <input type="text" id="search" name="search-input" placeholder="Search Movies">
+        <label for="search"></label>
+        <input type="text" id="search-input" name="search-input" placeholder="Search Movies">
         <input id="submit" type="submit">
+        <button id="clear">Clear Search</button>
     </form>
-    <section class="now-playing hidden">
+    <section class="now-playing">
         <h2 class="header-2 title">Now Playing</h2>
         <div id="movies-grid"></div>
 
@@ -28,11 +29,11 @@
         </div>
     </section>
 
-    <section class="search-movies">
+    <section class="search-movies hidden">
         <h2 class="header-2 title">Search Results</h2>
         <div id="movies-grid-search"></div>
 
-        <div id="load-more-movies-btn-search" onclick="loadMoreSearch()">
+        <div id="load-more-movies-btn-search">
             <button class="button"><i class="fa-solid fa-circle-arrow-down"></i></button>
         </div>
     </section>
