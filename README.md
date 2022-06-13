@@ -42,8 +42,6 @@ Deployed Application (optional): [Flixster Deployed Site](https://vgmichel.githu
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
 [https://www.youtube.com/watch?v=z4bta1Qog7E](https://www.youtube.com/watch?v=z4bta1Qog7E)
 
 ### Reflection
@@ -66,4 +64,4 @@ I'm glad that I was able to proerly call the API with little to no issues but I 
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to Stephane, Amaar, TA Roy and TA Rebecca for helping me with key issues in the beginning stages of this project!
