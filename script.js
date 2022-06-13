@@ -8,6 +8,7 @@ const searchBtn = document.querySelector('#submit')
 const clearSearchBtn = document.querySelector('#clear')
 const sectionNowPlaying = document.querySelector('.now-playing')
 const sectionSearch = document.querySelector('.search-movies')
+const sectionEmpty = document.querySelector('.empty')
 const imgHTTP = 'https://www.themoviedb.org/t/p/w1280/';
 
 let searchInput = document.querySelector('#search-input').value
@@ -43,7 +44,7 @@ function displayMovies (movieData) {
         //console.log(i.title)
         nowPlayingGrid.innerHTML += `
         <div class="movie-card">
-            <img src="${imgHTTP}${i.poster_path}">
+            <img src="${imgHTTP}${i.poster_path}" alt="Movie Poster Image">
             <div class="info">
             <p class="vote-average">&#9733; Rating: ${i.vote_average} / 10</p>
             <p class="movie-title">${i.title}</p>
@@ -75,6 +76,8 @@ async function searchMovies() {
     console.log(searchResponseData)
 
     displaySearch(searchResponseData)
+    sectionSearch.classList.remove('hidden')
+    sectionEmpty.classList.add('hidden')
 }
 
 function displaySearch (searchMovieData) {
@@ -82,7 +85,7 @@ function displaySearch (searchMovieData) {
     searchMovieData.results.forEach(function(x) {
         searchMoviesGrid.innerHTML += `
         <div class="movie-card">
-            <img src="${imgHTTP}${x.poster_path}">
+            <img src="${imgHTTP}${x.poster_path}" alt="Movie Poster Image">
             <div class="info">
             <p class="vote-average">&#9733; Rating: ${x.vote_average} / 10</p>
             <p class="movie-title">${x.title}</p>
@@ -106,18 +109,22 @@ loadSearchBtn.addEventListener("click", (evt) => {
 
 searchBtn.addEventListener("click", (evt) => {
     evt.preventDefault()
-    sectionSearch.classList.remove('hidden')
+    clearSearchBtn.classList.remove('hidden')
+    if (searchInput == emptySearch) {
+        sectionEmpty.classList.remove('hidden')
+        sectionSearch.classList.add('hidden')
+    }
     sectionNowPlaying.classList.add('hidden')
+    searchBtn.classList.add('hidden')
     clearSearch()
     searchMovies()
 })
 /////// END MOVIE SEARCH RESULTS ///////
 
 
-
 /////// WINDOW ONLOAD ///////
 window.onload = function () {
-
+    sectionEmpty.classList.add('hidden')
     loadNowPlaying(nowPlayingGrid)
 
 }
