@@ -4,9 +4,9 @@
 
 Submitted by: **Valerie Michel**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **16** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://vgmichel.github.io/flixster_starter/)
 
 ### Application Features
 
@@ -44,7 +44,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-`[https://www.loom.com/share/bb2ae9e9db69484b919b51602c02f609](https://www.loom.com/share/bb2ae9e9db69484b919b51602c02f609)`
+`[Demo on YouTube](https://www.youtube.com/watch?v=z4bta1Qog7E)`
 
 ### Reflection
 
