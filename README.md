@@ -50,15 +50,15 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I would say the previous labs as well as the guidance from the TAs really helped in completing this project.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+If I had more time, I would love implement all of the stretch features. I feel confident that I can complete them
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I'm glad that I was able to proerly call the API with little to no issues but I had some trouble loading more movies. There were a few people who were able to properly embed a youtube video into their modal. I would like to try that at some point.
 
 ### Open-source libraries used
 
