@@ -4,9 +4,9 @@
 
 Submitted by: **Valerie Michel**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **16** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://vgmichel.github.io/flixster_starter/)
 
 ### Application Features
 
@@ -34,7 +34,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 #### STRETCH FEATURES
 
-- [ ] Deploy website using GitHub Pages.
+- [x] Deploy website using GitHub Pages.
 - [ ] Allow user to view more details about a movie within a popup.
 - [ ] Improve the user experience through CSS & animation.
 - [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
@@ -42,23 +42,21 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+[https://www.youtube.com/watch?v=z4bta1Qog7E](https://www.youtube.com/watch?v=z4bta1Qog7E)
 
 ### Reflection
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I would say the previous labs as well as the guidance from the TAs really helped in completing this project.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+If I had more time, I would love implement all of the stretch features. I feel confident that I can complete them
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I'm glad that I was able to proerly call the API with little to no issues but I had some trouble loading more movies. There were a few people who were able to properly embed a youtube video into their modal. I would like to try that at some point.
 
 ### Open-source libraries used
 
@@ -66,4 +64,4 @@ Add your response here
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to Stephane, Amaar, TA Roy and TA Rebecca for helping me with key issues in the beginning stages of this project!
