@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&family=Quicksand:wght@300..700&display=swap');
 
 :root {
     --font-primary: Montserrat;
-    --font-secondary: Poppins;
+    --font-secondary: 'Quicksand', sans-serif;
+    --deep-indigo: #210440;
+    --pink: #E5958E;
+    --peach: #FDB095;
+    --white: #fff;
 }
 
 * {
@@ -15,7 +19,7 @@ html {
 }
 
 body {
-    background-color: #fee1e1;
+    background-color: var(--deep-indigo);
     /*background-image: url('./bg-img.jpg');*/
     background-repeat: repeat-y;
     object-fit: cover;
@@ -27,9 +31,12 @@ button {
 
 #movies-grid,
 #movies-grid-search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    justify-items: center;
     flex-wrap: wrap;
 
 }
@@ -59,16 +66,22 @@ button {
 }
 
 .header-main {
-    background-color: #2e3358;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--deep-indigo);
     padding: 30px;
-    box-shadow: 0 0 20px 5px rgba(92, 15, 15, 0.25);
+    /* box-shadow: 0 0 20px 5px rgba(92, 15, 15, 0.25); */
+    height: 300px;
+
 }
 
 .header-1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 30px;
+    margin-bottom: 20px;
     padding: 15px;
     color: white;
 }
@@ -78,15 +91,14 @@ button {
     align-items: center;
     justify-content: center;
     padding: 15px;
-    margin-top: 20px;
-    color: #2e3358;
+    color: var(--white);
 }
 
 .title {
     font-family: var(--font-secondary);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 input[type=text].search-box {
@@ -99,8 +111,8 @@ input[type=text].search-box {
     text-transform: uppercase;
     line-height: 18px;
     border-radius: 50px;
-    border: 1px solid #fff;
-    color: #fee1e1;
+    border: 1px solid var(--pink);
+    color: var(--white);
     padding-right: 30px;
     transition: all 250ms ease-in-out;
 }
@@ -109,12 +121,12 @@ input[type=text].search-box:hover, :focus {
     padding: 12px 0;
     outline: 0;
     border: 1px solid transparent;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--pink);
     border-radius: 0;
 }
 
 input::placeholder {
-    color: #fee1e1;
+    color: var(--white);
 }
 
 /* Remove chrome autofill color from inputs*/
@@ -125,10 +137,14 @@ select:-webkit-autofill {
     -webkit-text-fill-color: rgb(44, 44, 44) !important;
 }
 
+.now-playing {
+    color: var(--white);
+}
+
 .search-box-btn {
     margin-left: -34px;
     cursor: pointer;
-    color: #fee1e1;
+    color: var(--white);
 }
 
 .search-box-btn i {
@@ -140,7 +156,7 @@ select:-webkit-autofill {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 20%;
+    max-width: 80%;
     padding: 30px 15px;
     text-align: left;
 }
@@ -148,7 +164,7 @@ select:-webkit-autofill {
 .movie-card img {
     width: 100%;
     border-radius: 10px 10px 0 0;
-    box-shadow: 2px 2px 15px 0 rgba(92, 15, 15, 0.25);
+    filter: drop-shadow(-3px 5px 17px #0F0622);
     border: 1px solid #fff;
     border-bottom: 0;
 }
@@ -166,7 +182,7 @@ select:-webkit-autofill {
     font-size: 15px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: white;
+    color: var(--white);
     padding-left: 15px;
     padding-right: 20px;
 }
@@ -195,7 +211,7 @@ select:-webkit-autofill {
 
 .load-btn {
     display: flex;
-    align-items: items;
+    align-items: center;
     justify-content: center;
 }
 
@@ -209,6 +225,18 @@ select:-webkit-autofill {
 .empty p {
     display: flex;
     color: #2e3358;
+}
+
+.modal {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 700px;
+    height: 500px;
+    background: var(--white);
+    border: 1px solid var(--pink);
+    border-radius: 30px;
+    z-index: 100;
 }
 
 @media only screen and (max-width: 1280px) {
