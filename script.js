@@ -1,19 +1,25 @@
-const API_KEY = '499529c269445690825b8102ff9bcad3'
-const nowPlayingGrid = document.querySelector('#movies-grid')
-const searchMoviesGrid = document.querySelector('#movies-grid-search')
-const movieCard = document.querySelector('.movie-card')
-const loadBtn = document.querySelector('#load-more-movies-btn')
-const loadSearchBtn = document.querySelector('#load-more-movies-btn-search')
-const searchBtn = document.querySelector('#submit')
-const clearSearchBtn = document.querySelector('#clear')
-const sectionNowPlaying = document.querySelector('.now-playing')
-const sectionSearch = document.querySelector('.search-movies')
-const sectionEmpty = document.querySelector('.empty')
+// iMDB API Key
+const API_KEY = '499529c269445690825b8102ff9bcad3';
+
+//HTML Elements
+const modal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal-content');
+const closeBtn = document.querySelector('.close-btn');
+const nowPlayingGrid = document.querySelector('#movies-grid');
+const searchMoviesGrid = document.querySelector('#movies-grid-search');
+const loadBtn = document.querySelector('#load-more-movies-btn');
+const loadSearchBtn = document.querySelector('#load-more-movies-btn-search');
+const searchBtn = document.querySelector('#submit');
+const clearSearchBtn = document.querySelector('#clear');
+const sectionNowPlaying = document.querySelector('.now-playing');
+const sectionSearch = document.querySelector('.search-movies');
+const sectionEmpty = document.querySelector('.empty');
+
 const imgHTTP = 'https://www.themoviedb.org/t/p/w1280/';
 
-let searchInput = document.querySelector('#search-input').value
+let searchInput = document.querySelector('#search-input').value;
 let page = 1;
-let emptySearch = ''
+let emptySearch = '';
 
 
 /////// MOVIES NOW PLAYING ///////
@@ -49,7 +55,7 @@ function displayMovies (movieData) {
             <p class="vote-average">&#9733; Rating: ${i.vote_average} / 10</p>
             <p class="movie-title">${i.title}</p>
             </div>
-        </di>
+        </div>
         `
     })
 }
@@ -58,6 +64,25 @@ function displayMovies (movieData) {
         loadMoreNowPlaying()
     })
 /////// END MOVIES NOW PLAYING ///////
+
+////// MODAL CONTENT //////
+const movieCard = document.querySelector('.movie-card');
+
+function modalMovieData (allMovieData) {
+
+    allMovieData.results.forEach(function(i) {
+        modalContent.innerHTML += `
+        <div class="modal-img">
+            <img src="${imgHTTP}${i.poster_path}" alt=""Movie Poster Image">
+            div class="info">
+            <p class="vote-average">&#9733; Rating: ${i.vote_average} / 10</p>
+            <p class="movie-title">${i.title}</p>
+            </div>
+        </div>
+        `
+    })
+}
+
 
 
 
@@ -122,9 +147,24 @@ searchBtn.addEventListener("click", (evt) => {
 /////// END MOVIE SEARCH RESULTS ///////
 
 
+closeBtn.onclick = function() {
+    modal.classList.add('hidden')
+}
+
+window.onclick = function(e) {
+    if (e.target == modal) {
+        modal.classList.add('hidden')
+    }
+}
+
+
 /////// WINDOW ONLOAD ///////
 window.onload = function () {
+
     sectionEmpty.classList.add('hidden')
     loadNowPlaying(nowPlayingGrid)
 
+    // movieCard.onclick = function() {
+    //     modal.classList.remove('hidden')
+    // }
 }

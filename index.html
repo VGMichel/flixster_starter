@@ -11,14 +11,14 @@
 
     <title>Flixster</title>
 </head>
-<body>
-    <div class="modal">
-        <div class="close-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="x" width="30" height="30"><rect width="30" height="30" fill="none"></rect><line x1="200" x2="56" y1="56" y2="200" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" x2="56" y1="200" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+<body id="body">
+    <div class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="x" width="30" height="30"><rect width="30" height="30" fill="none"></rect><line x1="200" x2="56" y1="56" y2="200" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="200" x2="56" y1="200" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+            </span>
         </div>
-        <div class="modal-body"></div>
     </div>
-    <div class="overlay"></div>
     
     <div class="header-main">
         <h1 class="header-1 title">Flixster</h1>
@@ -31,7 +31,9 @@
     </div>
     <section class="now-playing">
         <h2 class="header-2 title">Now Playing</h2>
-        <div id="movies-grid"></div>
+        <div id="movies-grid">
+            <div class="movie-card"></div>
+        </div>
 
         <div id="load-more-movies-btn">
             <button class="button"><i class="fa-solid fa-circle-arrow-down"></i></button>
